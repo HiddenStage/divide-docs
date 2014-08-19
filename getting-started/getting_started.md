@@ -4,11 +4,13 @@ Getting started for Android
 Add the following dependencies to your Android project.
 
 Via Gradle:
+
 ```java
 compile 'io.divide:client-android:0.5.2'
 compile 'io.divide:client-android-mock:0.5.2'
 ```
 Via Maven:
+
 ```java
 <dependency>
     <groupId>io.divide</groupId>
