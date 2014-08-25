@@ -1,4 +1,4 @@
-Getting started for Android
+Getting started - Android
 ===========
 ##Step 1
 Add the following dependencies to your Android project.
@@ -27,7 +27,7 @@ Via Maven:
 
 ##Step 2
 
-Create a new Java class that extends `Application` and initialize Divide.io in the `onCreate` method like so:
+Create a new Java class that extends `Application` and initialize Divide.io using your server's URL in the `onCreate` method like so:
 
 ```java
 public class YourApplication extends Application {
@@ -38,3 +38,23 @@ public class YourApplication extends Application {
 	}
 }
 ```
+
+##Step 3
+
+**That's it!**
+
+You can now begin using our APIs to send and retrieve data from your backend.
+
+Here is an example of saving a simple string to your backend:
+
+```java
+BackendObject object = new BackendObject();
+object.put("comments", "This is awesome!");
+
+BackendServices
+	.remote()
+	.save(object)
+	.subscribe();
+```
+
+Check out our [documentation](http://www.divide.io/docs) for more info.
