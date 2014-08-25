@@ -14,14 +14,23 @@ Via Maven:
 
 ```java
 <dependency>
+
     <groupId>io.divide</groupId>
+    
     <artifactId>client-android</artifactId>
+    
     <version>0.5.2</version>
+    
 </dependency>
+
 <dependency>
+
     <groupId>io.divide</groupId>
+    
     <artifactId>client-mock</artifactId>
+    
     <version>0.5.2</version>
+    
 </dependency>
 ```
 
