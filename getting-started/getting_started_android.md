@@ -3,14 +3,22 @@ Getting started - Android
 ##Step 1
 Add the following dependencies to your Android project.
 
-Via Gradle:
+**Via Gradle:**
 
 ```java
-compile 'io.divide:client-android:0.5.2'
-compile 'io.divide:client-android-mock:0.5.2'
+repositories {
+    maven {
+        url "https://raw.github.com/jug6ernaut/mvn-repo/mvn-repo/"
+    }
+}
+
+dependencies {
+    compile 'io.divide:client-android:0.5.2'
+    compile 'io.divide:client-android-mock:0.5.2'
+}
 ```
 
-Via Maven:
+**Via Maven:**
 
 ```java
 <dependency>
