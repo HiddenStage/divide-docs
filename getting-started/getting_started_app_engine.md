@@ -36,5 +36,5 @@ When prompted to Define value for property 'package', accept the default value b
 When prompted to confirm your choices, accept the default value (Y).
 
 ##Step 10
-Your application will now be created.
+Wait for the project to finish generating. At this point, the basic project layout with required files is complete. Inside the directory where you created the project, you'll have a subdirectory named `sample`, which contains a `pom.xml` file and two subdirectories: `sample-ear` and `sample-war`, similar to the layout shown here:
 
