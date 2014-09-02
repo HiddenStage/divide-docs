@@ -38,3 +38,5 @@ When prompted to confirm your choices, accept the default value (Y).
 ##Step 10
 Wait for the project to finish generating. At this point, the basic project layout with required files is complete. Inside the directory where you created the project, you'll have a subdirectory named `sample`, which contains a `pom.xml` file and two subdirectories: `sample-ear` and `sample-war`, similar to the layout shown here:
 
+![](https://raw.githubusercontent.com/HiddenStage/divide-docs/master/getting-started/images/appengine_dir.png)
+
