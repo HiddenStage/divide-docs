@@ -40,7 +40,7 @@ Wait for the project to finish generating. At this point, the basic project layo
 
 ![](https://raw.githubusercontent.com/HiddenStage/divide-docs/master/getting-started/images/appengine_dir.png)
 
-We'll describe what to do inside these two subdirectories later. (Notice that the location where you'll add your own Java source code is inside guestbook-war/src/main/java.)
+We'll describe what to do inside these two subdirectories later. (Notice that the location where you'll add your own Java source code is inside sample-war/src/main/java.)
 
 Now you are ready to configure the project.
 
