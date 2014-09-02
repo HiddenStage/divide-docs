@@ -66,7 +66,7 @@ Your completed work should look like this:
 ```
 
 4. In the main app directory `sample`, invoke Maven as follows to make sure the project is buildable:
-5. 
+
 ```
 mvn clean install
 ```
