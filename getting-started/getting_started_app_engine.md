@@ -50,7 +50,7 @@ To configure the project:
 
 1. You'll need a project ID in order to deploy your app to production App Engine. Create a new project as follows:
   1. Visit [Google Developers Console](https://console.developers.google.com/) in your web browser, and click Create Project.
-  2. Supply the project name Guestbook and accept the project ID that is auto-generated for you.
+  2. Supply the project name Sample and accept the project ID that is auto-generated for you.
   3. Click **Create**.
 
     Make a note of the project ID, since you'll need it in the next step.
