@@ -48,31 +48,27 @@ Configuring the project
 ===========
 To configure the project:
 
-1) You'll need a project ID in order to deploy your app to production App Engine. Create a new project as follows:
+1. You'll need a project ID in order to deploy your app to production App Engine. Create a new project as follows:
   1. Visit [Google Developers Console](https://console.developers.google.com/) in your web browser, and click Create Project.
   2. Supply the project name Guestbook and accept the project ID that is auto-generated for you.
   3. Click **Create**.
 
-  Make a note of the project ID, since you'll need it in the next step.
+    Make a note of the project ID, since you'll need it in the next step.
+2. Return to the terminal window for your Maven project, and edit the file `sample/sample-ear/src/main/application/META-INF/appengine-application.xml`, so that the element `<application>` contains the project ID you just obtained above.
+3. Edit `sample/pom.xml` in the main application directory so that `<appengine.target.version>` inside the `<properties>` element points to the most recent App Engine SDK version. Currently, this is 1.9.10.
+    Your completed work should look like this:
 
-2) Return to the terminal window for your Maven project, and edit the file `sample/sample-ear/src/main/application/META-INF/appengine-application.xml`, so that the element `<application>` contains the project ID you just obtained above.
-3) Edit `sample/pom.xml` in the main application directory so that `<appengine.target.version>` inside the `<properties>` element points to the most recent App Engine SDK version. Currently, this is 1.9.10. 
+    ```
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <appengine.target.version>1.9.10</appengine.target.version>
+    </properties>
+    ```
+4. In the main app directory `sample`, invoke Maven as follows to make sure the project is buildable:
 
- Your completed work should look like this:
-
- ```
- <properties>
-   <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-   <appengine.target.version>1.9.10</appengine.target.version>
- </properties>
- ```
-
-4) In the main app directory `sample`, invoke Maven as follows to make sure the project is buildable:
-
-```
-mvn clean install
-```
-
-You should get a success message `[INFO] BUILD SUCCESS`.
+    ```
+    mvn clean install
+    ```
+    You should get a success message `[INFO] BUILD SUCCESS`.
 
 You are now ready to add your own application code and UI.
