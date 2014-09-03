@@ -5,42 +5,32 @@ This tutorial will help you get started using Divide.io with [Google App Engine]
 
 Before we begin, App Engine recommends using Java 7 and Maven 3.1 or greater.  If you need help setting this up, [click here](https://developers.google.com/appengine/docs/java/gettingstarted/setup).
 
-##Step 1
-Change to a directory where you want your project on your local machine.
+1. Change to a directory where you want your project on your local machine.
 
-##Step 2
-From the command line invoke Maven as follows:
-```
-mvn archetype:generate
-```
+2. From the command line invoke Maven as follows:
+    ```
+    mvn archetype:generate
+    ```
 
-##Step 3
-When prompted to Choose a number or apply filter, supply the value `com.google.appengine.archetypes:skeleton-archetype` to display a short list of archetypes matching the filter.
+3. When prompted to Choose a number or apply filter, supply the value `com.google.appengine.archetypes:skeleton-archetype` to display a short list of archetypes matching the filter.
 
-##Step 4
-When prompted to Choose a number or apply filter, supply the number displayed for the value `remote -> com.google.appengine.archetypes:appengine-skeleton-archetype`, which currently is the number 1.
+4. When prompted to Choose a number or apply filter, supply the number displayed for the value `remote -> com.google.appengine.archetypes:appengine-skeleton-archetype`, which currently is the number 1.
 
-##Step 5
-When prompted to Define value for property 'groupId', supply a package name for your backend i.e. `io.divide.backend`.
+5. When prompted to Define value for property 'groupId', supply a package name for your backend i.e. `io.divide.backend`.
 
-##Step 6
-When prompted to Define value for property 'artifactId', supply the name of your application i.e. `sample`.
+6. When prompted to Define value for property 'artifactId', supply the name of your application i.e. `sample`.
 
-##Step 7
-When prompted to Define value for property 'version', accept the default value by pressing enter.
+7. When prompted to Define value for property 'version', accept the default value by pressing enter.
 
-##Step 8
-When prompted to Define value for property 'package', accept the default value by pressing enter.
+8. When prompted to Define value for property 'package', accept the default value by pressing enter.
 
-##Step 9
-When prompted to confirm your choices, accept the default value (Y).
+9. When prompted to confirm your choices, accept the default value (Y).
 
-##Step 10
-Wait for the project to finish generating. At this point, the basic project layout with required files is complete. Inside the directory where you created the project, you'll have a subdirectory named `sample`, which contains a `pom.xml` file and two subdirectories: `sample-ear` and `sample-war`, similar to the layout shown here:
+10. Wait for the project to finish generating. At this point, the basic project layout with required files is complete. Inside the directory where you created the project, you'll have a subdirectory named `sample`, which contains a `pom.xml` file and two subdirectories: `sample-ear` and `sample-war`, similar to the layout shown here:
 
-![](https://raw.githubusercontent.com/HiddenStage/divide-docs/master/getting-started/images/appengine_dir.png)
+    ![](https://raw.githubusercontent.com/HiddenStage/divide-docs/master/getting-started/images/appengine_dir.png)
 
-We'll describe what to do inside these two subdirectories later. (Notice that the location where you'll add your own Java source code is inside sample-war/src/main/java.)
+    We'll describe what to do inside these two subdirectories later. (Notice that the location where you'll add your own Java source code is inside sample-war/src/main/java.)
 
 Now you are ready to configure the project.
 
