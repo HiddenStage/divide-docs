@@ -34,8 +34,7 @@ Before we begin, App Engine recommends using Java 7 and Maven 3.1 or greater.  I
 
 Now you are ready to configure the project.
 
-Configuring the project
-===========
+##Configuring the project
 To configure the project:
 
 1. You'll need a project ID in order to deploy your app to production App Engine. Create a new project as follows:
@@ -62,3 +61,19 @@ To configure the project:
     You should get a success message `[INFO] BUILD SUCCESS`.
 
 You are now ready to add your own application code and UI.
+
+##Adding Divide.io
+Add the following dependencies in `sample/sample-war/pom.xml`:
+
+    ```
+    <dependency>
+        <groupId>io.divide</groupId>
+        <artifactId>dao-orientdb</artifactId>
+        <version>0.5.2</version>
+    </dependency>
+    <dependency>
+        <groupId>io.divide</groupId>
+        <artifactId>server</artifactId>
+        <version>0.5.2</version>
+    </dependency>
+    ```
