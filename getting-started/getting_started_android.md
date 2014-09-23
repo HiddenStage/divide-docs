@@ -65,4 +65,4 @@ BackendServices
 	.subscribe();
 ```
 
-Check out our [documentation](http://www.divide.io/docs) or check out our [sample Android app](https://github.com/HiddenStage/divide-android-sample) for more info.
+Check out our [documentation](http://www.divide.io/docs) or our [sample Android app](https://github.com/HiddenStage/divide-android-sample) for more info.
