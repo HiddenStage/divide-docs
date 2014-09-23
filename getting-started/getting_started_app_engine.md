@@ -1,7 +1,7 @@
 Getting started - App Engine
 ===========
 ##Step 1
-Git clone the divide-server-sample repository.
+Clone the divide-server-sample repository via git by running the following in your command line:
 
 ```
 git clone https://github.com/HiddenStage/divide-server-sample.git
