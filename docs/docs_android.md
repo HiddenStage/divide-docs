@@ -2,7 +2,7 @@ Android Documentation
 ===========
 
 #### Initialization
-First you need to initialize your backend. Luckily, all you need is your production URL. If you would like to test your app in a development environment, put in your development URL in the last parameter of the `Backend.init` method. 
+First you need to initialize your backend. Luckily, all you need is your production URL. If you would like to test your app in a development environment, put your development URL in the last parameter of the `Backend.init` method. 
 
 ```java
 public class MyApplication extends Application {
