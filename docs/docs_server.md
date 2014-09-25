@@ -2,7 +2,7 @@ Server Documentation
 ====================
 Built on Jersey, it can be deployed to any J2EE server that supports javax.ws.rs.core.Application. DAO implementations are independent and can be written/plugged in for the situation.
 
-The only thing you need to do for the backend is install our libraries, initialize a DAO class/instance, and provide an encryption key. Following our Getting Started guides below for step-by-step guides for various server providers.
+The only thing you need to do for the backend is install our libraries, initialize a DAO class/instance, and provide an encryption key. Follow our Getting Started guides below for step-by-step guides for various server providers.
 
 ### Getting Started Guides
 
