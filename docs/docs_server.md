@@ -3,7 +3,7 @@ Server Documentation
 Built on Jersey, it can be deployed to any J2EE server that supports javax.ws.rs.core.Application. DAO implementations are independent and can be written/plugged in for the situation.
 
 ### Getting Started
-[Deploy on App Engine](https://github.com/HiddenStage/divide-docs/blob/master/getting-started/getting_started_app_engine.md)
+[Deploy on App Engine](http://www.divide.io/get_started/app_engine)
 
 AWS and more server examples coming soon!
 
