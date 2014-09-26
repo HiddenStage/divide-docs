@@ -9,8 +9,8 @@ public class MyApplication extends Application {
 
     @Override
     public void onCreate(){
-        // Context, production URL, development URL
-        Backend.init(this,"http://authenticator-test.appspot.com/api/","");
+	// Context, production server, debug server
+	Backend.init(new AndroidDebugConfig(this, "http://your-backend-server.appspot.com/api/", "")); 
     }
 }
 ```
