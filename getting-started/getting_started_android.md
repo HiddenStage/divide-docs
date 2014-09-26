@@ -42,6 +42,7 @@ public class YourApplication extends Application {
 
 	@Override
 	public void onCreate() {
+		// Context, production server, debug server
 		Backend.init(new AndroidDebugConfig(this, "http://your-backend-server.appspot.com/api/", ""));
 	}
 }
