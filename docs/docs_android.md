@@ -31,9 +31,18 @@ public class MyApplication extends Application {
 ```
 
 #### Users
-Divide.io associates every Object it saves with a particular user. This can be handled in two ways: credential users (users who register and login) or anonymous users. 
+Divide.io associates every backend call with a particular user. This can be handled in two ways: credential users (users who register and login) or anonymous users. 
+
+**Note:** It's important that you ensure users are logged in before making any other calls to the backend.
 
 ##### Credential Users
+
+##### Anonymous Users
+If your app doesn't need to have users with usernames and passwords, you can use anonymous users. Anonymous users have all of the same functionalities as credential users except they aren't persistant across sessions and devices.
+
+```java
+UserUtils.getAnonymousUser(this).toBlocking().first();
+```
 
 #### Create and Save an Object
 Creating and saving an object is easy. Simply create a new `BackendObject` instance, store primative types to it, then store it as shown below. `.remote()` saves the object to your backend and `.local()` stores the object to your local database.
