@@ -35,16 +35,23 @@ public class MyApplication extends Application {
 #### Users
 Divide.io associates every backend call with a particular user. This can be handled in two ways: credential users (users who register and login) or anonymous users. 
 
-**Note:** It's important that you ensure users are logged in before making any other calls to the backend.
+**It's important that users are logged in before making any other calls to the backend.** Backend calls while users are not logged in will fail and in some instances will cause your app to crash.
 
 ##### Credential Users
+
 
 ##### Anonymous Users
 If your app doesn't need to have users with usernames and passwords, you can use anonymous users. Anonymous users have all of the same functionalities as credential users except they aren't persistant across sessions and devices.
 
+Creating anonymous users is easy. Simply put the following before any other call to the backend.
+
 ```java
 UserUtils.getAnonymousUser(this).toBlocking().first();
 ```
+
+This call will check to see if a user is associated with the current device, and if so will log them in automatically. If no account is associated, it will automatically create an account and log in the user.
+
+You might want to use anonymous users over credential users if you don't need to persist data across devices or if you don't need to associate data with a particular user.
 
 #### Create and Save an Object
 Creating and saving an object is easy. Simply create a new `BackendObject` instance, store primative types to it, then store it as shown below. `.remote()` saves the object to your backend and `.local()` stores the object to your local database.
