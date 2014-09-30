@@ -15,7 +15,9 @@ public class MyApplication extends Application {
 }
 ```
 
-If you would like to test your app in a development environment, put your development URL (usually a local server) in the last parameter of the `Backend.init` method. 
+##### Testing in a development environment
+
+If you would like to test your app in a development environment, simply put your development URL (usually a local server) as the last parameter of the `Backend.init` method. 
 
 ```java
 public class MyApplication extends Application {
@@ -27,6 +29,11 @@ public class MyApplication extends Application {
     }
 }
 ```
+
+#### Users
+Divide.io associates every Object it saves with a particular user. This can be handled in two ways: credential users (users who register and login) or anonymous users. 
+
+##### Credential Users
 
 #### Create and Save an Object
 Creating and saving an object is easy. Simply create a new `BackendObject` instance, store primative types to it, then store it as shown below. `.remote()` saves the object to your backend and `.local()` stores the object to your local database.
