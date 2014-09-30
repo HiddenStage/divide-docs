@@ -57,6 +57,7 @@ You can now begin using our APIs to send and retrieve data from your backend.
 Here is an example of saving a simple string to your backend:
 
 ```java
+// Get anonymous user
 UserUtils.getAnonymousUser(this).subscribe();
 
 BackendObject object = new BackendObject();
