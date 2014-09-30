@@ -2,7 +2,7 @@ Android Documentation
 ===========
 
 #### Initialization
-First you need to initialize your backend. Luckily, all you need is your production URL.
+First you'll need to initialize your backend. Luckily, all you need is your production URL. We recommend initializing Divide.io by extending `Application` and putting the following code in `onCreate()`.
 
 ```java
 public class MyApplication extends Application {
@@ -14,6 +14,8 @@ public class MyApplication extends Application {
     }
 }
 ```
+
+**Note:** Make sure to add `<uses-permission android:name="android.permission.INTERNET" />` to your AndroidManifest. 
 
 ##### Testing in a development environment
 
