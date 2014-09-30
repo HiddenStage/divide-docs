@@ -58,15 +58,15 @@ Here is an example of saving a simple string to your backend:
 
 ```java
 // Get anonymous user
-UserUtils.getAnonymousUser(this).subscribe();
+UserUtils.getAnonymousUser(this).toBlocking().first();
 
 BackendObject object = new BackendObject();
-object.put("Comments", "This is awesome!");
+object.put("comments", "This is awesome!");
 
 BackendServices
-	.remote()
-	.save(object)
-	.subscribe();
+        .remote()
+        .save(object)
+        .subscribe();
 ```
 
 Check out our [documentation](http://www.divide.io/docs/android), [javadocs](http://hiddenstage.github.io/divide-docs/javadocs/), and our [sample Android app](https://github.com/HiddenStage/divide-android-sample) for more info.
