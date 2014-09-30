@@ -57,8 +57,10 @@ You can now begin using our APIs to send and retrieve data from your backend.
 Here is an example of saving a simple string to your backend:
 
 ```java
+UserUtils.getAnonymousUser(this).subscribe();
+
 BackendObject object = new BackendObject();
-object.put("comments", "This is awesome!");
+object.put("Comments", "This is awesome!");
 
 BackendServices
 	.remote()
