@@ -2,7 +2,7 @@ Android Documentation
 ===========
 
 #### Initialization
-First you need to initialize your backend. Luckily, all you need is your production URL. If you would like to test your app in a development environment, put your development URL in the last parameter of the `Backend.init` method. 
+First you need to initialize your backend. Luckily, all you need is your production URL.
 
 ```java
 public class MyApplication extends Application {
@@ -10,7 +10,20 @@ public class MyApplication extends Application {
     @Override
     public void onCreate(){
 	// Context, production server, debug server
-	Backend.init(new AndroidDebugConfig(this, "http://your-backend-server.appspot.com/api/", "")); 
+	Backend.init(new AndroidDebugConfig(this, "https://your-backend-server.appspot.com/api/", "")); 
+    }
+}
+```
+
+If you would like to test your app in a development environment, put your development URL (usually a local server) in the last parameter of the `Backend.init` method. 
+
+```java
+public class MyApplication extends Application {
+
+    @Override
+    public void onCreate(){
+	// Context, production server, debug server
+	Backend.init(new AndroidDebugConfig(this, "https://your-backend-server.appspot.com/api/", "http://localhost:8888")); 
     }
 }
 ```
