@@ -36,3 +36,7 @@ All data stored by Divide.io is stored natively in your backend. You have access
 
 #### Security
 For added security, we recommend all web traffic Divide.io facilitates is via SSL. Many of the server providers support SSL natively, whereas some require you to configure SSL.
+
+#### Links
+* [Javadocs](http://hiddenstage.github.io/divide-docs/javadocs/)
+* [Sample Server app](https://github.com/HiddenStage/divide-server-sample)
