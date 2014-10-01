@@ -54,7 +54,7 @@ This call will check to see if a user is associated with the current device, and
 You might want to use anonymous users over credential users if you don't need to persist data across devices or if you don't need to associate data with a particular user.
 
 #### Create and Save an Object
-Creating and saving an object is easy. Simply create a new `BackendObject` instance, store primative types to it, then store it as shown below. `.remote()` saves the object to your backend and `.local()` stores the object to your local database.
+Creating and saving an Object is easy. Simply create a new `BackendObject` instance, store primative types to it, then store it as shown below. `.remote()` saves the object to your backend and `.local()` stores the object to your local database.
 
 ```java
 BackendObject object = new BackendObject();
@@ -74,8 +74,7 @@ BackendServices
 // store locally async
 BackendServices
 	.local()
-	.save(object)
-	.subscribe();
+	.save(object);
 ```
 
 #### Perform a Query
