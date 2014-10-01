@@ -100,4 +100,4 @@ BackendServices.remote()
 
 #### Links
 * [Javadocs](http://hiddenstage.github.io/divide-docs/javadocs/)
-* [sample Android app](https://github.com/HiddenStage/divide-android-sample)
+* [Sample Android app](https://github.com/HiddenStage/divide-android-sample)
