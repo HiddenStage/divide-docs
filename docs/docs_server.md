@@ -33,3 +33,6 @@ public class SomeApplication extends AuthApplication<OrientDBDao> {
 
 #### Data manipulation
 All data stored by Divide.io is stored natively in your backend. You have access to it to do things such as data manipulation, advanced queries, custom APIs, etc.
+
+#### Security
+For added security, we recommend all web traffic sent via Divide.io is through SSL. Many of the server providers support SSL natively, whereas some require you to configure SSL.
