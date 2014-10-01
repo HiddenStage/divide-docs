@@ -2,6 +2,10 @@ Divide.io Documentation
 ===========
 Project repo: https://github.com/HiddenStage/divide
 
+Getting Started pages: http://www.divide.io/get_started
+
+Docs pages: http://www.divide.io/docs
+
 Javadocs: http://hiddenstage.github.io/divide-docs/javadocs/
 
 ##License:
