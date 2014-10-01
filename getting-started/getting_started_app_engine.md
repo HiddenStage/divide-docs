@@ -27,6 +27,8 @@ Run `mvn clean install` to build the project and download all necessary library 
 ##Step 8
 Go to the root directory and run  `mvn appengine:update` to upload your project to App Engine. You may be asked to login to your Google account in this step
 ##Step 9
-**Congrats!** Your backend is now up and running. Your production URL is `https://your-project-id.appspot.com/api/`.
+**Congrats!** Your backend is now up and running. 
+
+Your production URL is `https://your-project-id.appspot.com/api/`. App Engine supports SSL natively, so make sure you prefix your URL with `https://` for added security.
 
 Check out our [documentation](http://www.divide.io/docs/server), [javadocs](http://hiddenstage.github.io/divide-docs/javadocs/), and our [sample Server app](https://github.com/HiddenStage/divide-server-sample) for more info.
