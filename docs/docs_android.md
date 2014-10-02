@@ -102,6 +102,8 @@ BackendServices
 	.save(object);
 ```
 
+// get, save, delete, exists, count
+
 #### Perform a Query
 
 QueryBuilder is built to be structured like a SQL query. 
