@@ -41,12 +41,16 @@ Divide.io associates every backend call with a particular user. This can be hand
 
 
 ##### Anonymous Users
-If your app doesn't need to have users with usernames and passwords, you can use anonymous users. Anonymous users have all of the same functionalities as credential users except they aren't persistant across sessions and devices.
+If your app doesn't need to have users with usernames and passwords, you can use anonymous users. Anonymous users have all of the same functionalities as credential users except they aren't persistant across devices.
 
 Creating anonymous users is easy. Simply put the following before any other call to the backend.
 
 ```java
+// Synchronous 
 UserUtils.getAnonymousUser(this).toBlocking().first();
+
+// Asynchronous
+UserUtils.getAnonymousUser(this).subscribe();
 ```
 
 This call will check to see if a user is associated with the current device, and if so will log them in automatically. If no account is associated, it will automatically create an account and log in the user.
