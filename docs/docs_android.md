@@ -43,8 +43,12 @@ Divide.io associates every backend call with a particular user. This can be hand
 // Sign up
 BackendUser.signUp(email, username, password);
 
+BackendUser.signUpInBackground();
+
 // Sign in
 BackendUser.signin(username, password);
+
+BackendUser.loginInBackground();
 
 // Logout
 BackendUser.logOut();
