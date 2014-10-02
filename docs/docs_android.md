@@ -115,9 +115,10 @@ BackendServices
 
 // get, save, delete, exists, count
 
-#### Perform a Query
+#### Queries
 
-QueryBuilder is built to be structured like a SQL query. For instance, if you want to get receive the first 10 records from the BackendObject class, your Query would be:
+##### Building a query
+Building queries in Divide.io are built to be structured like a standard SQL query. For instance, if you want to get receive the first 10 records from the BackendObject class, your query would be:
 
 ```java
 Query query = new QueryBuilder()
@@ -127,18 +128,18 @@ Query query = new QueryBuilder()
     .build();
 ```
 
-If you'd like to receive all objects from the Pizza class who have more than 2 toppings, your Query would be:
+If you'd like to receive all objects from the Pizza class which have more than 2 toppings, your query would be:
 
 ```java
-// Retrieve the first 10 records from the BackendObject class
 Query query = new QueryBuilder()
     .select()
     .from(Pizza.class)
-    .where(TransientObject.USER_DATA + "NumberOfToppings", OPERAND.GREATER_THAN, "2")
+    .where("NumberOfToppings", OPERAND.GREATER_THAN, "2")
     .build();
 ```
 
-Now that you've built your Query, here's how you query your backend asyncronously:
+##### Running a query
+Now that you've built your Query, here's how you run your query against your backend asyncronously:
 
 ```java
 // Retrieve the first 10 records from the BackendObject class
@@ -147,7 +148,7 @@ Query query = new QueryBuilder()
     .from(BackendObject.class)
     .limit(10).build();
 
-// run query against remote server
+// Run query against remote server
 BackendServices.remote()
     .query(BackendObject.class, query)
     .subscribe(new Action1<Collection<BackendObject>>() {
@@ -161,15 +162,16 @@ BackendServices.remote()
 And here's how to query your local database:
 
 ```java
-// Retrieve the first 10 records from the BackendObject class
+// Retrieve the all objects with more than 2 toppings from the Pizza class
 Query query = new QueryBuilder()
     .select()
-    .from(BackendObject.class)
-    .limit(10).build();
+    .from(Pizza.class)
+    .where("NumberOfToppings", OPERAND.GREATER_THAN, "2")
+    .build();
      
-// run query against remote server (returns list of Objects)
+// Run query against local server
 BackendServices.local()
-    .query(BackendObject.class, query)});
+    .query(Pizza.class, query)});
 ```
 
 #### Extending BackendObject
