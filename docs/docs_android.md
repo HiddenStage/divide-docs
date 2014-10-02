@@ -38,27 +38,38 @@ Divide.io associates every backend call with a particular user. This can be hand
 **It's important that users are logged in before making any other calls to the backend.** Backend calls while users are not logged in will fail and in some instances will cause your app to crash.
 
 ##### Credential Users
+Credential users are users who register with a username and password to your app. Data stays linked to a user's account, which means it can persist across multiple devices as long as the user signs in.
+
+**Note:** Passwords are encrypted over the network and stored on the server via bcrypt. We do recommend SSL for added security.
+
+##### Signing Up
+The following will sign a user up to your service. All it requires is an email, username, and password (Strings).
 
 ```java
-// Sign up
+// Synchronous 
 BackendUser.signUp(email, username, password);
 
-BackendUser.signUpInBackground();
-
-// Sign in
-BackendUser.signin(username, password);
-
-BackendUser.loginInBackground();
-
-// Logout
-BackendUser.logOut();
+// Asynchronous 
+BackendUser.signUpInBackground(email, username, password);
 ```
 
+##### Logging in
+Once a user has an account, you can sign them in by using the following methods.
+
 ```java
+// Synchronous 
+BackendUser.signin(username, password);
 
-// Pulls UI from CredentialView
-new AuthActivity()
+// Asynchronous
+BackendUser.loginInBackground(username, password);
+```
 
+We'll be changing the login calls to a consistant name in the next release :)
+
+##### Logging out
+
+```java
+BackendUser.logOut();
 ```
 
 ##### Anonymous Users
@@ -161,6 +172,9 @@ public class Pizza extends BackendObject {
 }
 ```
 
+#### Libraries used
+* [RxJava](https://github.com/ReactiveX/RxJava)
+* [Retrofit](http://square.github.io/retrofit/)
 
 
 #### Links
