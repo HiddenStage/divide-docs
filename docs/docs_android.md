@@ -138,6 +138,8 @@ Query query = new QueryBuilder()
     .build();
 ```
 
+Check out the [Query Javadocs page](http://hiddenstage.github.io/divide-docs/javadocs/io/divide/shared/transitory/query/Query.html) to show all commands you can use to build your queries.
+
 ##### Running a query
 Now that you've built your Query, here's how you run your query against your backend asyncronously:
 
@@ -169,7 +171,7 @@ Query query = new QueryBuilder()
     .where("NumberOfToppings", OPERAND.GREATER_THAN, "2")
     .build();
      
-// Run query against local server
+// Run query against local database
 BackendServices.local()
     .query(Pizza.class, query)});
 ```
