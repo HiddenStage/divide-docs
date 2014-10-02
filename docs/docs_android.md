@@ -39,6 +39,23 @@ Divide.io associates every backend call with a particular user. This can be hand
 
 ##### Credential Users
 
+```java
+// Sign up
+BackendUser.signUp(email, username, password);
+
+// Sign in
+BackendUser.signin(username, password);
+
+// Logout
+BackendUser.logOut();
+```
+
+```java
+
+// Pulls UI from CredentialView
+new AuthActivity()
+
+```
 
 ##### Anonymous Users
 If your app doesn't need to have users with usernames and passwords, you can use anonymous users. Anonymous users have all of the same functionalities as credential users except they aren't persistant across devices.
@@ -83,6 +100,10 @@ BackendServices
 
 #### Perform a Query
 
+QueryBuilder is built to be structured like a SQL query. 
+
+// Like Javadocs for QueryBuilder here
+
 ```java
 // Retrieve the first 10 records from the BackendObject class
 Query query = new QueryBuilder()
@@ -90,7 +111,7 @@ Query query = new QueryBuilder()
     .from(BackendObject.class)
     .limit(10).build();
 
-// run query against remote server
+// run query against remote server (change to Pizza 
 BackendServices.remote()
     .query(BackendObject.class, query)
     .subscribe(new Action1<Collection<BackendObject>>() {
@@ -99,7 +120,42 @@ BackendServices.remote()
  	     		// do something with objects
            }
      });
+     
+     // run query against remote server (returns list of Objects)
+BackendServices.local()
+    .query(BackendObject.class, query)});
 ```
+
+#### Extending BackendObject
+
+```java
+public class Pizza extends BackendObject {
+    String type;
+    int numOfToppings;
+
+    public Pizza() {
+        super(Pizza.class);
+    }
+
+    public void setType(String type) {
+        this.put("Type", type);
+    }
+
+    public String getType() {
+        return this.get(String.class, "Type");
+    }
+
+    public void setNumOfToppings(int numOfToppings) {
+        this.put("NumberOfToppings", numOfToppings);
+    }
+
+    public int getNumOfToppings() {
+        return this.get(Integer.class, "NumberOfToppings");
+    }
+}
+```
+
+
 
 #### Links
 * [Javadocs](http://hiddenstage.github.io/divide-docs/javadocs/)
