@@ -90,16 +90,16 @@ This call will check to see if a user is associated with the current device, and
 You might want to use anonymous users over credential users if you don't need to persist data across devices or if you don't need to associate data with a particular user.
 
 #### Create and Save an Object
-Creating and saving an Object is easy. Simply create a new `BackendObject` instance, store primative types to it, then store it as shown below. `.remote()` saves the object to your backend and `.local()` stores the object to your local database.
+Creating and saving an Object is easy. Simply create a new `BackendObject` instance, store primative types to it, then store it as shown below. `.remote()` saves the object to your backend and `.local()` stores the object to a local database.
 
 ```java
 BackendObject object = new BackendObject();
 
 // add values, will be serialized with GSON
-object.put("somePrimative1",1);          // int
-object.put("somePrimative2",1L);         // long
+object.put("somePrimative1",1);             // int
+object.put("somePrimative2",1L);            // long
 object.put("somePrimative3","Some string"); // String
-object.put("someObject",new Object());   // Some POJO...etc.
+object.put("someObject",new Object());      // Some POJO...etc.
 
 // store remotely async
 BackendServices
@@ -117,9 +117,28 @@ BackendServices
 
 #### Perform a Query
 
-QueryBuilder is built to be structured like a SQL query. 
+QueryBuilder is built to be structured like a SQL query. For instance, if you want to get receive the first 10 records from the BackendObject class, your Query would be:
 
-// Like Javadocs for QueryBuilder here
+```java
+Query query = new QueryBuilder()
+    .select()
+    .from(BackendObject.class)
+    .limit(10)
+    .build();
+```
+
+If you'd like to receive all objects from the Pizza class who have more than 2 toppings, your Query would be:
+
+```java
+// Retrieve the first 10 records from the BackendObject class
+Query query = new QueryBuilder()
+    .select()
+    .from(Pizza.class)
+    .where(TransientObject.USER_DATA + "NumberOfToppings", OPERAND.GREATER_THAN, "2")
+    .build();
+```
+
+Now that you've built your Query, here's how you query your backend asyncronously:
 
 ```java
 // Retrieve the first 10 records from the BackendObject class
@@ -128,7 +147,7 @@ Query query = new QueryBuilder()
     .from(BackendObject.class)
     .limit(10).build();
 
-// run query against remote server (change to Pizza 
+// run query against remote server
 BackendServices.remote()
     .query(BackendObject.class, query)
     .subscribe(new Action1<Collection<BackendObject>>() {
@@ -137,8 +156,18 @@ BackendServices.remote()
  	     		// do something with objects
            }
      });
+```
+
+And here's how to query your local database:
+
+```java
+// Retrieve the first 10 records from the BackendObject class
+Query query = new QueryBuilder()
+    .select()
+    .from(BackendObject.class)
+    .limit(10).build();
      
-     // run query against remote server (returns list of Objects)
+// run query against remote server (returns list of Objects)
 BackendServices.local()
     .query(BackendObject.class, query)});
 ```
