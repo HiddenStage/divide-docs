@@ -6,16 +6,8 @@ Add the following dependencies to your Android project.
 **Via Gradle:**
 
 ```java
-repositories {
-    maven {
-        url "https://raw.github.com/jug6ernaut/mvn-repo/mvn-repo/"
-    }
-}
-
-dependencies {
-    compile 'io.divide:client-android:0.5.2'
-    compile 'io.divide:client-android-mock:0.5.2'
-}
+compile 'io.divide:client-android:0.5.3'
+compile 'io.divide:client-android-mock:0.5.3'
 ```
 
 **Via Maven:**
@@ -24,12 +16,12 @@ dependencies {
 <dependency>
    <groupId>io.divide</groupId>
    <artifactId>client-android</artifactId>
-   <version>0.5.2</version>
+   <version>0.5.3</version>
 </dependency>
 <dependency>
    <groupId>io.divide</groupId>
    <artifactId>client-mock</artifactId>
-   <version>0.5.2</version>
+   <version>0.5.3</version>
 </dependency>
 ```
 
