@@ -221,6 +221,11 @@ Query query = new QueryBuilder()
 List<Pizza> pizzas = BackendServices.local().query(query);
 ```
 
+#### Known issues
+* Queries to App Engine only work with String data types
+* Greater than, less than, and related queries currently fail to remote App Engine, but works on local DB
+* Docs are lacking. We'll be adding a lot to these docs in the coming weeks.
+
 #### Libraries used
 * [RxJava](https://github.com/ReactiveX/RxJava)
 * [Retrofit](http://square.github.io/retrofit/)
