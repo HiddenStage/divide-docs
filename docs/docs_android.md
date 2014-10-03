@@ -64,7 +64,7 @@ BackendUser.signin(username, password);
 BackendUser.loginInBackground(username, password);
 ```
 
-We'll be changing the login calls to a consistant name in the next release :)
+**Note:** We'll be changing the login calls to a consistant name in the next release :)
 
 ##### Logging out
 
@@ -113,7 +113,55 @@ BackendServices
 	.save(object);
 ```
 
-// get, save, delete, exists, count
+**Note:** Currently only Strings work for queries, so if you will be querying a field we recommend you store it as a String for now. We'll be fixing this in an upcoming release.
+
+#### Extending BackendObject
+
+You can create your own POJO and extend BackendObject. This allows you to customize methods when creating your objects.
+
+```java
+public class Pizza extends BackendObject {
+    public Pizza() {
+        super(Pizza.class);
+    }
+
+    public void setType(String type) {
+        this.put("Type", type);
+    }
+
+    public String getType() {
+        return this.get(String.class, "Type");
+    }
+
+    public void setNumOfToppings(String numOfToppings) {
+        this.put("NumberOfToppings", numOfToppings);
+    }
+
+    public String getNumOfToppings() {
+        return this.get(String.class, "NumberOfToppings");
+    }
+}
+```
+
+And then set and store values like so:
+
+```java
+Pizza pizza = new Pizza();
+
+pizza.setType("Meat Lovers");
+pizza.setNumOfToppings("3");
+
+// store remotely async
+BackendServices
+	.remote()
+	.save(pizza)
+	.subscribe();
+        
+// store locally async
+BackendServices
+	.local()
+	.save(pizza);
+```
 
 #### Queries
 
@@ -173,35 +221,6 @@ Query query = new QueryBuilder()
      
 // Run query against local database
 List<Pizza> pizzas = BackendServices.local().query(query);
-```
-
-#### Extending BackendObject
-
-```java
-public class Pizza extends BackendObject {
-    String type;
-    int numOfToppings;
-
-    public Pizza() {
-        super(Pizza.class);
-    }
-
-    public void setType(String type) {
-        this.put("Type", type);
-    }
-
-    public String getType() {
-        return this.get(String.class, "Type");
-    }
-
-    public void setNumOfToppings(int numOfToppings) {
-        this.put("NumberOfToppings", numOfToppings);
-    }
-
-    public int getNumOfToppings() {
-        return this.get(Integer.class, "NumberOfToppings");
-    }
-}
 ```
 
 #### Libraries used
