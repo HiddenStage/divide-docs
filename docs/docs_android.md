@@ -224,6 +224,7 @@ List<Pizza> pizzas = BackendServices.local().query(query);
 #### Libraries used
 * [RxJava](https://github.com/ReactiveX/RxJava)
 * [Retrofit](http://square.github.io/retrofit/)
+* [OkHttp](http://square.github.io/okhttp/)
 
 
 #### Links
