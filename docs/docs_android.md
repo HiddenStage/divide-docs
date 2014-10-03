@@ -58,13 +58,11 @@ Once a user has an account, you can sign them in by using the following methods.
 
 ```java
 // Synchronous 
-BackendUser.signin(username, password);
+BackendUser.signIn(username, password);
 
 // Asynchronous
-BackendUser.loginInBackground(username, password);
+BackendUser.signInInBackground(username, password);
 ```
-
-**Note:** We'll be changing the login calls to a consistant name in the next release :)
 
 ##### Logging out
 
