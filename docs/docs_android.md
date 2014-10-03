@@ -172,8 +172,7 @@ Query query = new QueryBuilder()
     .build();
      
 // Run query against local database
-BackendServices.local()
-    .query(Pizza.class, query)});
+List<Pizza> pizzas = BackendServices.local().query(query);
 ```
 
 #### Extending BackendObject
