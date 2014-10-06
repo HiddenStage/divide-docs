@@ -20,6 +20,7 @@ mvn appengine:update_indexes
  * **Workaround:** Store all data types that need to be queries as Strings.
 * Greater than, less than, and similar queries currently fail to remote App Engine, but works on local DB. 
  * **[Workaround](https://github.com/HiddenStage/divide/issues/6#issuecomment-57958620)**
+
 ## Links
 * [App Engine - Java Docs](https://cloud.google.com/appengine/docs/java/)
 * [App Engine - Using Maven](https://cloud.google.com/appengine/docs/java/tools/maven)
