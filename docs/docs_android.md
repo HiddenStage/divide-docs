@@ -223,7 +223,7 @@ List<Pizza> pizzas = BackendServices.local().query(query);
 
 #### Known issues
 * Queries to App Engine only work with String data types.
-* Greater than, less than, and related queries currently fail to remote App Engine, but works on local DB.
+* Greater than, less than, and similar queries currently fail to remote App Engine, but works on local DB. [Here is a workaround](https://github.com/HiddenStage/divide/issues/6#issuecomment-57958620).
 * Docs are lacking. We'll be adding a lot to these docs in the coming weeks.
 
 #### Libraries used
