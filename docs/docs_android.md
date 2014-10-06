@@ -93,19 +93,19 @@ Creating and saving an Object is easy. Simply create a new `BackendObject` insta
 ```java
 BackendObject object = new BackendObject();
 
-// add values, will be serialized with GSON
+// Add values, will be serialized with GSON
 object.put("somePrimative1",1);             // int
 object.put("somePrimative2",1L);            // long
 object.put("somePrimative3","Some string"); // String
 object.put("someObject",new Object());      // Some POJO...etc.
 
-// store remotely async
+// Store remotely async
 BackendServices
 	.remote()
 	.save(object)
 	.subscribe();
         
-// store locally async
+// Store locally async
 BackendServices
 	.local()
 	.save(object);
@@ -149,13 +149,13 @@ Pizza pizza = new Pizza();
 pizza.setType("Meat Lovers");
 pizza.setNumOfToppings("3");
 
-// store remotely async
+// Store remotely async
 BackendServices
 	.remote()
 	.save(pizza)
 	.subscribe();
         
-// store locally async
+// Store locally async
 BackendServices
 	.local()
 	.save(pizza);
