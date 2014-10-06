@@ -1,39 +1,29 @@
-Getting started - App Engine
+Help - App Engine
 ===========
-##Step 1
-Clone the divide-server-sample repository via git by running the following in your command line:
+## Using Apache Maven with App Engine
+We recommend using Maven to install and configure the App Engine SDK.
 
+## Common commands
+Upload your App Engine code:
 ```
-git clone https://github.com/HiddenStage/divide-server-sample.git
+mvn appengine:update
 ```
-##Step 2
-Change the package name (and corresponding directory names) from `io.divide.server.sample` to your own package name. 
-##Step 3
-Change the encryption key to something secure. We recommend using a random password generator.
-##Step 4
-Now you need to create your App Engine instance.
+Start a local development server:
+```
+mvn appengine:devserver
+```
+Update indexes:
+```
+mvn appengine:update_indexes
+```
+[All goals](https://cloud.google.com/appengine/docs/java/tools/maven#app_engine_maven_plugin_goals)
 
-1. Visit [Google Developers Console](https://console.developers.google.com/) in your web browser, and click Create Project.
-2. Supply the project name Sample and accept the project ID that is auto-generated for you.
-3. Click **Create**.
+## Known issues with Divide.io
+* Queries to App Engine only work with String data types.
+ * **Workaround:** Store all data types that need to be queries as Strings.
+* Greater than, less than, and similar queries currently fail to remote App Engine, but works on local DB. 
+ * **[Workaround](https://github.com/HiddenStage/divide/issues/6#issuecomment-57958620)**
 
-Make a note of the project ID, since you'll need it in the next step.
-##Step 5
-Return to your local project. In `src/main/webapp/WEB-INF/appengine-web.xml`, put your project ID from Step 4 in the `application` tag. (Replace `authenticator-test`)
-##Step 6
-In `src/main/webapp/WEB-INF/web.xml`, put your parent class in the `param-value` tag. (Replace `io.divide.server.sample.SomeApplication`)
-##Step 7
-Run `mvn clean install` to build the project and download all necessary library files.
-##Step 8
-Go to the root directory and run  `mvn appengine:update` to upload your project to App Engine. You may be asked to login to your Google account in this step
-##Step 9
-**Congrats!** Your backend is now up and running. 
-
-Your production URL is `https://your-project-id.appspot.com/api/`. 
-
-**Note:** App Engine supports SSL natively, so make sure you prefix your URL with `https://` for added security.
-
-##Links
-* [Server documentation](http://www.divide.io/docs/server)
-* [Javadocs](http://hiddenstage.github.io/divide-docs/javadocs/)
-* [Sample Server app](https://github.com/HiddenStage/divide-server-sample)
+## Links
+* [App Engine - Java Docs](https://cloud.google.com/appengine/docs/java/)
+* [App Engine - Using Maven](https://cloud.google.com/appengine/docs/java/tools/maven)
