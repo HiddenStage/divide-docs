@@ -35,5 +35,6 @@ Your production URL is `https://your-project-id.appspot.com/api/`.
 
 ##Links
 * [Server documentation](http://www.divide.io/docs/server)
+* [App Engine Help](https://github.com/HiddenStage/divide-docs/blob/master/help/help_app_engine.md)
 * [Javadocs](http://hiddenstage.github.io/divide-docs/javadocs/)
 * [Sample Server app](https://github.com/HiddenStage/divide-server-sample)
