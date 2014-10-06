@@ -174,13 +174,13 @@ Query query = new QueryBuilder()
     .build();
 ```
 
-If you'd like to receive all objects from the Pizza class which have more than 2 toppings, your query would be:
+If you'd like to receive all objects from the Pizza class which have exactly 2 toppings, your query would be:
 
 ```java
 Query query = new QueryBuilder()
     .select()
     .from(Pizza.class)
-    .where("NumberOfToppings", OPERAND.GREATER_THAN, "2")
+    .where("NumberOfToppings", OPERAND.EQ, "2")
     .build();
 ```
 
@@ -210,11 +210,11 @@ BackendServices.remote()
 And here's how to query your local database:
 
 ```java
-// Retrieve the all objects with more than 2 toppings from the Pizza class
+// Retrieve the all objects with exactly 2 toppings from the Pizza class
 Query query = new QueryBuilder()
     .select()
     .from(Pizza.class)
-    .where("NumberOfToppings", OPERAND.GREATER_THAN, "2")
+    .where("NumberOfToppings", OPERAND.EQ, "2")
     .build();
      
 // Run query against local database
@@ -222,8 +222,8 @@ List<Pizza> pizzas = BackendServices.local().query(query);
 ```
 
 #### Known issues
-* Queries to App Engine only work with String data types
-* Greater than, less than, and related queries currently fail to remote App Engine, but works on local DB
+* Queries to App Engine only work with String data types.
+* Greater than, less than, and related queries currently fail to remote App Engine, but works on local DB.
 * Docs are lacking. We'll be adding a lot to these docs in the coming weeks.
 
 #### Libraries used
