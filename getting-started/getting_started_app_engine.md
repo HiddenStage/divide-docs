@@ -14,7 +14,7 @@ Change the encryption key to something secure. We recommend using a random passw
 Now you need to create your App Engine instance.
 
 1. Visit [Google Developers Console](https://console.developers.google.com/) in your web browser, and click Create Project.
-2. Supply the project name Sample and accept the project ID that is auto-generated for you.
+2. Supply your project name and accept the project ID that is auto-generated for you.
 3. Click **Create**.
 
 Make a note of the project ID, since you'll need it in the next step.
