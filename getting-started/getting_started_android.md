@@ -46,21 +46,6 @@ public class YourApplication extends Application {
 
 You can now begin using our APIs to send and retrieve data from your backend.
 
-Here is an example of saving a simple string to your backend:
-
-```java
-// Get anonymous user
-UserUtils.getAnonymousUser(this).toBlocking().first();
-
-BackendObject object = new BackendObject();
-object.put("comments", "This is awesome!");
-
-BackendServices
-        .remote()
-        .save(object)
-        .subscribe();
-```
-
 ##Links
 * [Android documentation](http://www.divide.io/docs/android)
 * [Javadocs](http://hiddenstage.github.io/divide-docs/javadocs/)
